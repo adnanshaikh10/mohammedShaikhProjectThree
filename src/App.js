@@ -1,15 +1,12 @@
 import './App.css';
+import Header from './components/Header';
 
 function App() {
-  return (
-    <div className="App">
-      <header>
-      <h1>API PROJECT INCOMING</h1>
-      <h2>The app isnt completed yet, but when it will be finished.... ✨amazing✨</h2>
-      <h2>Actually so amazing....</h2>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <Header />
+        </div>
+    );
 }
 
 export default App;
