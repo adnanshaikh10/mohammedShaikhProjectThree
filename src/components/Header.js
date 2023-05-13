@@ -18,9 +18,12 @@ const Header = () => {
    
 
     return(
-        <header>
+        <>
+            <header>
             <h1>🐱 domestic animal kingdom 🐶</h1>
             <h2> Choose YOUR Favorite! </h2>
+            </header>
+            <main>
             <div className="choosePet">
                 <div className="catTeam">
                     <img src="http://placekitten.com/275/300" alt="Nala the cat"></img>
@@ -41,7 +44,9 @@ const Header = () => {
                 ? <CatSection />
                 : null
             }
-        </header>
+            </main>
+        </>
+       
     )
 }
 

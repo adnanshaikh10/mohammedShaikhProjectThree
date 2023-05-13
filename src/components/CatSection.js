@@ -27,23 +27,23 @@ const CatSection = () => {
         })
     },[]);
 
-    
-
     useEffect(()=>{
+        getAnimalImages('abys');
+    },[])
+
+    const getAnimalImages = (animalID) => {
         axios({
             url: "https://api.thecatapi.com/v1/images/search",
             params:{
                 api_key: "live_j29E1vec9gYqx9oyno1sprzIEcYTs7Vwh8DXzyUR9qRYl1M6E57JzcveakP1JCbh",
-                breed_ids: "abys"
+                breed_ids: animalID,
             }
             
         }).then((response)=>{
             const image = (response.data)
             setImages(image);
-            console.log(image);
         })
-    },[])
-
+    }
     // have it so when person clicks on the learn more, the new component of animalInfo shows up.
 
     const handleInfoClick = (event) => {
@@ -52,9 +52,8 @@ const CatSection = () => {
         setCatInfo(infoButton);
     }
 
-    const handleChange = (event) => {
-        const value = (event.target.value)
-        console.log(value)
+    const handleChange =  (event) => {
+         getAnimalImages(event.target.value);          
     }
 
 
@@ -66,14 +65,14 @@ const CatSection = () => {
                 <select name="catsBreed" id="catsBreed">
                     {breeds.map((breed)=>{
                         return(
-                            <option key={breed.id} value={breed.id} id={breed.reference_image_id}>{breed.name}</option>
+                            <option key={breed.name} value={breed.id} id={breed.reference_image_id}>{breed.name}</option>
                         )
                     })}
                 </select>
             </form>
                 {images.map((image)=>{
                     return(
-                        <img key={image.breeds[0].name} src={image.url} alt={image.breeds[0].name} />
+                        <img key={image.id} id={image.id} src={image.url} alt={image.breeds[0].name} />
                     )
                 })
 
@@ -82,7 +81,9 @@ const CatSection = () => {
             <button onClick={handleInfoClick}>LEARN MORE</button>
             {
                 catInfo === "LEARN MORE"
-                    ? <AnimalInfo />
+                    ? <AnimalInfo 
+                       breedArray = {images}
+                    /> 
                     : null
             }
         </div>
@@ -90,3 +91,11 @@ const CatSection = () => {
     )
 }
 export default CatSection;
+
+ // breedName = "Abyssinian"
+                        // breed=  "Abys"
+                        // description = "The Abyssinian is easy to care for, and a joy to have in your home. They're affectionate cats and love both people and other animals."
+                        // temperament = "Active, Energetic, Independent, Intelligent, Gentle"
+                        // origin = "Egypt"
+                        // weight = "7  -  10 lbs"
+                        // lifespan= "14 - 15 years"

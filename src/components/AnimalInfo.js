@@ -1,20 +1,15 @@
-const AnimalInfo = () => {
+const AnimalInfo = (images) => {
+    console.log(images);
     return(
         <>
          <div className="animalInfo">
-            <h3> Breed Name : ID</h3>
-            <p> Decription</p>
-            <p>Temperament</p>
-            <p>Origin</p>
-            <p>Weight</p>
-            <p>Lifespan</p>
+            <h3> {images.breedArray[0].breeds[0].name} : ID </h3>
         </div>
         <div className="thanksMessage">
             <p>Thank you for using my API App!</p>
             <p>Try clicking a different breed!?!</p>
         </div>
         </>
-       
     )
 }
 export default AnimalInfo;
