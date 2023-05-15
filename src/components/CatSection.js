@@ -1,11 +1,7 @@
-// API KEY =
-// live_j29E1vec9gYqx9oyno1sprzIEcYTs7Vwh8DXzyUR9qRYl1M6E57JzcveakP1JCbh
 import { useEffect, useState } from "react";
 import React from "react";
-import AnimalInfo from "./AnimalInfo";
+import CatInfo from "./CatInfo";
 import axios from "axios";
-
-//'https://api.thecatapi.com/v1/breeds'
 
 const CatSection = () => {
 
@@ -44,20 +40,16 @@ const CatSection = () => {
             setImages(image);
         })
     }
-    // have it so when person clicks on the learn more, the new component of animalInfo shows up.
 
     const handleInfoClick = (event) => {
         const infoButton = (event.target.innerText);
 
         setCatInfo(infoButton);
     }
-
     const handleChange =  (event) => {
          getAnimalImages(event.target.value);          
     }
 
-
-        
     return (
         <div className="catSection">
             <form onChange={handleChange}>
@@ -73,29 +65,19 @@ const CatSection = () => {
                 {images.map((image)=>{
                     return(
                         <img key={image.id} id={image.id} src={image.url} alt={image.breeds[0].name} />
-                    )
-                })
-
+                        )
+                    })
                 }
             
             <button onClick={handleInfoClick}>LEARN MORE</button>
             {
                 catInfo === "LEARN MORE"
-                    ? <AnimalInfo 
-                       breedArray = {images}
+                    ? <CatInfo 
+                       infoArray = {images}
                     /> 
                     : null
             }
         </div>
-
     )
 }
 export default CatSection;
-
- // breedName = "Abyssinian"
-                        // breed=  "Abys"
-                        // description = "The Abyssinian is easy to care for, and a joy to have in your home. They're affectionate cats and love both people and other animals."
-                        // temperament = "Active, Energetic, Independent, Intelligent, Gentle"
-                        // origin = "Egypt"
-                        // weight = "7  -  10 lbs"
-                        // lifespan= "14 - 15 years"

@@ -7,15 +7,11 @@ const Header = () => {
 
     const [choseAnimal, setChoseAnimal] = useState("");
 
-    // have it so when person clicks on the dog or cat side, the new component of catsection and dogsection show up ( for now just cat part )
-
     const handleAnimalClick = (event) => {
         const animal = (event.target.innerText);
-        
         setChoseAnimal(animal);
 
     }
-   
 
     return(
         <>
@@ -46,7 +42,6 @@ const Header = () => {
             }
             </main>
         </>
-       
     )
 }
 
