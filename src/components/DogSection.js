@@ -63,12 +63,6 @@ const DogSection = () => {
                   
                 </select>
             </form>
-                    {/* {imageArray.map((animalInfo)=>{
-                        return(
-                           
-                        )
-                    })} */}
-           
                     <img key={images.id} src={images.url} alt={images.breeds ?
                     images.breeds[0].name : ""} />
 

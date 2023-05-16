@@ -20,6 +20,8 @@ const CatSection = () => {
         }).then((response)=>{
             const breedArray = (response.data)
             setBreeds(breedArray);
+        }).catch((error)=>{
+            prompt("Sorry the API needs a break, refresh the page please!");
         })
     },[]);
 

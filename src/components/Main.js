@@ -2,6 +2,8 @@ import { useState } from "react";
 import React from "react";
 import CatSection from "./CatSection";
 import DogSection from "./DogSection";
+import CatImage from "../assets/CatImage.jpeg";
+import DogImage from "../assets/DogImage.jpg";
 
 const Main = () => {
 
@@ -15,11 +17,11 @@ const Main = () => {
         <main>
             <div className="choosePet">
                 <div className="catTeam">
-                    <img src="http://placekitten.com/275/300" alt="Nala the cat"></img>
+                    <img src= {CatImage} alt="Archie"></img>
                     <button onClick={handleAnimalClick}>CATS</button>
                 </div>
                 <div className="dogTeam">
-                    <img src="http://placedog.net/275/300" alt="Nyx the dog"></img>
+                    <img src={DogImage} alt="Nyx"></img>
                     <button onClick={handleAnimalClick}>DOGS</button>
                 </div>
             </div>
