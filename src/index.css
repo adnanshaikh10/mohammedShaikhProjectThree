@@ -129,6 +129,7 @@ header .specialStyle {
 .catSection .animalInfo,
 .dogSection .animalInfo {
   padding: 0 20px 20px;
+  width: 100%;
   border-top: dashed 1px #B0DBC9;
 }
 
