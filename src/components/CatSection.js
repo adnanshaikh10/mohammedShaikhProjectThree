@@ -72,7 +72,7 @@ const CatSection = () => {
             <button onClick={handleInfoClick}>LEARN MORE</button>
             {
                 catInfo === "LEARN MORE"
-                    ? <CatInfo 
+                    ? <CatInfo className="aboutAnimal" 
                        infoArray = {images}
                     /> 
                     : null

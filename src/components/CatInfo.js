@@ -12,8 +12,7 @@ const CatInfo = (images) => {
                     <p>{images.infoArray[0].breeds[0].life_span} Years - Average life span</p>
                 </div>
                 <div className="thanksMessage">
-                    <p>Thank you for using my API App!</p>
-                    <p>Try clicking a different breed!?!</p>
+                <p>Thank you for using my API App! -Try clicking a different breed!?!</p>
                 </div>
             </>
         )

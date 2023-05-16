@@ -75,7 +75,7 @@ const DogSection = () => {
             <button onClick={handleInfoClick}>LEARN MORE</button>
             {
                 dogInfo === "LEARN MORE"
-                    ? <DogInfo 
+                    ? <DogInfo className="aboutAnimal" 
                     infoArray= {images}
                     />
                     : null
