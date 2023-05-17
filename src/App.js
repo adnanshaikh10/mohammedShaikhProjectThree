@@ -1,14 +1,16 @@
-import './App.css';
+import './index.css';
+import Header from './components/Header';
+import Main from './components/Main';
+import Footer from './components/Footer';
 
 function App() {
-  return (
-    <div className="App">
-      <header>
-      <h1>API PROJECT INCOMING</h1>
-      <h2>The app isnt completed yet, but when it will be finished.... ✨amazing✨</h2>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <Header />
+            <Main />
+            <Footer />
+        </div>
+    );
 }
 
 export default App;
